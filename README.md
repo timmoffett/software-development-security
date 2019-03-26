@@ -75,7 +75,7 @@ Indeed you can!
 | ----- | ------------------------------------------------------------ |
 | 50%   | Discovery of vulnerabilities.  (Points reflect difficulty, not number of vulnerabilities.  For number of vulns, check the assumptions).  *example1.cs :  8 points; example2.py:  15 points; example3.aspx:  6 points; example4.java:  15 points; example5.c:  6 points;* |
 | 30%   | Correct risks and remedial steps presented                   |
-| 20%   | Best Practices Poster *must submit as a .pdf*                |
+| 20%   | Best Practices Poster (*must submit as a .pdf*)              |
 
 ### Expectations
 
