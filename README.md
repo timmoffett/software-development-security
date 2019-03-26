@@ -83,4 +83,3 @@ Indeed you can!
 - Students are expected to present simple steps to avoid/mitigate/reduce the exposure of the vulnerability.
 - Students are expected to design an attention grabbing poster.  There may be prizes for best posters
 
-5 points of extra credit if you find this: http://admin:noonecanGuessme!@192.168.242.17
