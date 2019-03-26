@@ -1,7 +1,9 @@
 #  Lab 8: Software Development Security 
 
+*If you run any of the code provided in the example files, you assume all responsibility for the consequences*
 
 ## Introduction
+
 One of IT’s strengths is the ability to rapidly assimilate and interpret information from a systems perspective.  As part of your education prior to this course, you have taken classes on programming, web systems, databases and networking.  You will now put all of this to use as you review unfamiliar code as you look for vulnerabilities.
 
 ## Learning Objectives
@@ -30,11 +32,11 @@ This is vulnerable code  //This is your note about the code.
 
 ### Assumptions
 
-1. Example 1 has 4 or more vulnerabilities.
-2. Example 2 has 1 or more vulnerabilities.
-3. Example 3 has 1 or more vulnerabilities.
-4. Example 4 has multiple vulnerabilities.
-5. Example 5 has 1 or more vulnerability.
+1. example1.cs has 4 or more vulnerabilities.
+2. example2.py has 4 or more vulnerabilities.
+3. example3.aspx has 1 or more vulnerabilities.
+4. example4.java has multiple vulnerabilities.
+5. example5.c has 1 or more vulnerability.
 
 ### Considerations
 
@@ -71,7 +73,7 @@ Indeed you can!
 
 | Grade | Description                                                  |
 | ----- | ------------------------------------------------------------ |
-| 50%   | Discovery of vulnerabilities.  (Points reflect difficulty, not number of vulnerabilities.  For number of vulns, check the assumptions).  *Example 1:  5 points; Example 2:  2 points; Example 3:  3 points; Example 4:  10 points; Example 5:  3 points;* |
+| 50%   | Discovery of vulnerabilities.  (Points reflect difficulty, not number of vulnerabilities.  For number of vulns, check the assumptions).  *example1.cs :  8 points; example2.py:  15 points; example3.aspx:  6 points; example4.java:  15 points; example5.c:  6 points;* |
 | 30%   | Correct risks and remedial steps presented                   |
 | 20%   | Best Practices Poster                                        |
 
