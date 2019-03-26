@@ -1,27 +1,22 @@
------BEGIN RSA PRIVATE KEY-----
-MIIEogIBAAKCAQEAq2tggxw0gBsx4yH0rke70yamQVtbzrOzk4tXcNA0Jm5ImkFu
-yItQ9l+yqE922OkjKpU6ZaEN1GvNinA3vZIXZEzsMemrO+mQcvfm9V8o9nPZD18n
-puiilLe/TjysuWySKJgesLwIT0EhyPPfiw4rQxQ8mF552CrYMgZGdg/eIxlXmbH7
-eaDdF/987E12YY7/VQertyHqSjzZNyuj+CLxQNqvlrPChvB28tzHQkcWX5JCmYyQ
-5Cv7ghswHczlZEz2rXFC7QlqWNgZ5fb+mWY73HL9x1nqyXz1agIGpPO3ep8+8L+a
-A/igB1EPhi0jQ/kG1oQBeG3EIhoZbWps8mhRXwIDAQABAoIBADANKoG2L1VVyjc0
-NoWAIDuBUwtxE5wurYEHh1xdULERKxLqkqZuvyRBETCzDcqiF7SBHlyMt/a6vWQ4
-LrfaMupv0anwKYri3xYLPde8dBwZv1fawZ+9CI4Nr/e7dGOJ9rKgacH7A41L4a+W
-BSzSrPfhvVas7RTWdcIYFjpUGl3V8Ejhe3WvGK2XgLgENI8f8NiN2uRBWBbiluR5
-1VsjFBM8Vzf2/iQhWANp2UW8o4y7rtKLudclioQLi1xNOxhHIs0lB0VI/QfGIfui
-6Krwbby7JrKU3XwjpS2bAcaN4OrfymUOnyzYKUllPAbEnTUpPF32CSW2Du+/ajVp
-40BHryECgYEA1penylqXV+T9xHPQHRjU6dahTuq24Jd6cvm05JU8/2dL23f90wOc
-AhVtJrdYMmpzFe+Bv7RboYX9fcyd8m3NRj9ZJnvgHzo9/ZwVKozdc0xlmGDemVyq
-x2I1mRTQaDcT6TSUV11OOCOEGiBfvHsTGFltrpKA4lfzUNnn0BQdxK8CgYEAzH8U
-9Xoi8lex8Demr5fJgqrplQ12pBS9qiFqoGGfw9wk39lW2wbenr45Oq7/ie6jhXuW
-2DnJOLMqWAjL9pQysnl+0fuhPdfBD+50wTmSJvvsvYr/XYG1MMk94alkmjzU6HHl
-Kf5XC3cSi0vm9WmlbtrrgAJgs2OHeqdvmJ2lylECgYB5BvtpEwK8XbgJ7k93uaOL
-ZrN/cL1HmedDpTWyncDTQwzzcI9FTYnVWwQ+i7VAae0SeAwzdKMhTBKVuqtyKR9W
-+S9slvzmX9DKkhcV8nCLMJE0CZ5B3JOs8+TKu4R24mlmY3Muer88xjshCRU1lixE
-1VsY1CPAhF4EQYGOR2oqnQKBgA8m+26U9jHuvYiHFxq7rHq6H0SkEr5lqwgIIdZw
-ZV4l2bWcbQsdnzEz9xmaDeUygXtKhQrQfVBuNhz/yd0jbf47cmIsuu3SJsP/bzdC
-BMpOsGP7AKD1E2/h+WvXGVU0XLI8fjZ2WgzHbeBUZ3CXu2JTZk+93Vxta4RzE5nD
-VJ2BAoGAUKo2ez8CiHQY9v6m9Y8EC/kXbVlfHAW5qLQD3nKfR0Dqvn79wVNpAwCf
-WTcaPpJxvs81oDHtJ6C8ukCKK29IRUhKip73JC2hgvSHOlGu8BuP/QjvVkZVE/z3
-tIfDSm7uXnVeqnhWynuPf5YdJbf2yJ4nz2sivX3Oz5nxndIcIJs=
------END RSA PRIVATE KEY-----
+string Status = "No";
+string sqlstring = "";
+try {
+	SqlConnection sql = new SqlConnection(
+		@"data source=localhost;" +
+		"user id=sa;password=password;");
+	sql.Open();
+	sqlstring = "SELECT HasShipped" +
+		" FROM detail WHERE ID='" + Id + "'";
+	SqlCommand cmd = new SqlCommand(sqlstring, sql);
+	if ((int)cmd.ExecuteScalar() != 0)
+		Status = "Yes";
+}
+catch (SqlException se) {
+	Status = sqlstring + " failed\n\r";
+	foreach(SqlError e in se.Errors) {
+		Status += e.Message + "\n\r";
+	}
+}
+catch (Exception e) {
+	Status = e.ToString();
+}
