@@ -2,7 +2,7 @@
 #include <string.h>
 void printName(const char* input)
 {
-    char name[255];
+    char name[255]; //buffer overflow this.
     strcpy(name, input);
     printf("Your name is %s\n", name);
 }
