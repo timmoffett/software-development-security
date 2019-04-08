@@ -33,10 +33,10 @@ private string GetFilename(string productName)
     try
     {
         sqlConn = new SqlConnection("Data Source=localhost;initial 
-                      catalog=acme; User ID=sa; password=sqlp@ssword;");
+                      catalog=acme; User ID=sa; password=sqlp@ssword;"); #should be saved in a config file.
         sqlConn.Open();
         SqlCommand sqlComm = new SqlCommand("select filename from products 
-                             where name ='" + productName + "';",sqlConn);
+                             where name ='" + productName + "';",sqlConn); #sql injectable
         object productFilename = sqlComm.ExecuteScalar();
         if (productName != null)
         {
