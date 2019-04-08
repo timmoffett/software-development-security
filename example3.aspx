@@ -33,7 +33,7 @@ namespace SecurityAwareness
         {
              if (Page.IsPostBack == true)
              {
-                  Label1.Text = TextBox1.Text;
+                  Label1.Text = TextBox1.Text; // unsanitized, take your pick of client side epxloits to run (e.g. mitm and send xss)
              }
         }
    }
